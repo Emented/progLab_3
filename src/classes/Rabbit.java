@@ -1,13 +1,14 @@
 package classes;
 
+import utility.AbstractAnimalHero;
 import utility.AbstractFlowersKeeper;
 import utility.Feelings;
 import utility.Places;
 
-public class Rabbit extends Crew{
+public class Rabbit extends AbstractAnimalHero{
 
-    public Rabbit(String name, int amountOfFlowers, Places place, Feelings feeling) {
-        super(name, amountOfFlowers, place, feeling);
+    public Rabbit(String name, Places place, Feelings feeling) {
+        super(name, 0, place, feeling);
     }
 
     public void goOut(Place toPlace) {
@@ -20,7 +21,7 @@ public class Rabbit extends Crew{
         }
     }
 
-    public void meetAnotherHero(Crew anotherHero) {
+    public void meetAnotherHero(AbstractAnimalHero anotherHero) {
         if (getPlace().equals(anotherHero.getPlace())) {
             System.out.println("'" + getName() + "' втретил '" + anotherHero.getName() + "' в месте '" + getPlace().getName() + "'");
         }

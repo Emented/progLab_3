@@ -5,16 +5,15 @@ import classes.*;
 public class Story {
 
     public static void main(String[] args) {
-        Rabbit rabbit = new Rabbit("Кролик", 0, Places.HomeOfPyatachek, Feelings.HAPPYNESS);
-        Pyatachok pig = new Pyatachok("Пятачёк", 0, Places.HomeOfPyatachek, Feelings.HAPPYNESS);
-        Donkey donkey = new Donkey("Осел Иа", 0, Places.HomeOfDonkey, Feelings.HAPPYNESS);
+        Rabbit rabbit = new Rabbit("Кролик", Places.HomeOfPyatachek, Feelings.HAPPYNESS);
+        Pyatachok pig = new Pyatachok("Пятачёк", Places.HomeOfPyatachek, Feelings.HAPPYNESS);
+        Donkey donkey = new Donkey("Осел Иа", Places.HomeOfDonkey, Feelings.HAPPYNESS);
         Place homeOfP = new Place (0, Places.HomeOfPyatachek);
         Place vase = new Place (0, Places.Vase);
         Place yard = new Place (0, Places.Yard);
         Place field = new Place (100, Places.Field);
         InterfaceOfTime earlyTime = new EarlyTime();
 
-        Crew[] crewmembers = new Crew[]{rabbit, pig, donkey};
         rabbit.goOut(yard);
         pig.getUp(earlyTime);
         pig.decideToDoSmthg("нарвать букет цветов");

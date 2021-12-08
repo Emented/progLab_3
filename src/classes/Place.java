@@ -9,7 +9,7 @@ public class Place extends AbstractFlowersKeeper {
     Places place;
 
     public Place(int amountOfFlowers, Places place) {
-        super(amountOfFlowers);
+        setAmountOfFlowers(amountOfFlowers);
         this.place = place;
     }
 

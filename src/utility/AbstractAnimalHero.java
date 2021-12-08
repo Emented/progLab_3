@@ -10,7 +10,7 @@ public abstract class AbstractAnimalHero extends AbstractFlowersKeeper {
     private Feelings feeling;
 
     public AbstractAnimalHero(String name, int amountOfFlowers, Places place, Feelings feeling) {
-        super(amountOfFlowers);
+        setAmountOfFlowers(amountOfFlowers);
         this.name = name;
         this.place = place;
         this.feeling = feeling;

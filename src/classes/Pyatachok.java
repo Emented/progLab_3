@@ -2,13 +2,12 @@ package classes;
 
 import utility.*;
 
-public class Pyatachok extends Crew implements InterfaceOfThinking{
+public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking{
     private boolean isSleeping = true;
     private boolean hasAnAimToDoSmthg = false;
     private int degreeOfMem = 0;
-
-    public Pyatachok(String name, int amountOfFlowers, Places place, Feelings feeling) {
-        super(name, amountOfFlowers, place, feeling);
+    public Pyatachok(String name, Places place, Feelings feeling) {
+        super(name, 0, place, feeling);
     }
 
     public void getUp(InterfaceOfTime time) {
@@ -49,7 +48,7 @@ public class Pyatachok extends Crew implements InterfaceOfThinking{
         }
     }
 
-    public void thinkAbout(Crew crewmember) {
+    public void thinkAbout(AbstractAnimalHero crewmember) {
         if (!isSleeping) {
             int amountOfFlowers = crewmember.getAmountOfFlowers();
             System.out.println("'" + getName() + "' подумал об '" + crewmember.getName() + "' и понял, что у него " + amountOfFlowers + " цветов");
@@ -61,7 +60,7 @@ public class Pyatachok extends Crew implements InterfaceOfThinking{
         }
     }
 
-    public void thinkMore(Crew crewmember) {
+    public void thinkMore(AbstractAnimalHero crewmember) {
         if (!isSleeping) {
             int amountOfFlowers = crewmember.getAmountOfFlowers();
             setFeeling(Feelings.BIGGERCOMPASSION);
@@ -75,7 +74,7 @@ public class Pyatachok extends Crew implements InterfaceOfThinking{
     public void repeat(PhraseOfHero phrase) {
         String currentPhrase = phrase.getPhrase();
         degreeOfMem++;
-        System.out.println("'" + getName() + "' повторял '" + (String) currentPhrase + "'");
+        System.out.println("'" + getName() + "' повторял '" + currentPhrase + "'");
         System.out.println("Уровень его запоминания увеличился на 1, теперь он составляет " + degreeOfMem);
     }
 
