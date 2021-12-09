@@ -36,7 +36,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
 
     public void moveTo(Place fPoint) {
         if (!isSleeping) {
-            if (fPoint.getPlace().isPossibilityToGetInside()) {
+            if (fPoint.getPlace().isPossibileToGetInside()) {
                 System.out.println("'" + getName() + "' побежал в место '" + fPoint.getPlace().getName() + "'");
                 setPlace(fPoint.getPlace());
             } else {

@@ -1,7 +1,6 @@
 package classes;
 
 import utility.AbstractAnimalHero;
-import utility.AbstractFlowersKeeper;
 import utility.Feelings;
 import utility.Places;
 
@@ -12,7 +11,7 @@ public class Rabbit extends AbstractAnimalHero{
     }
 
     public void goOut(Place toPlace) {
-        if (toPlace.getPlace().isPossibilityToGetInside()) {
+        if (toPlace.getPlace().isPossibileToGetInside()) {
             System.out.println("'" + getName() + "' ушел из места '" + getPlace().getName() + "' в место: '" + toPlace.getPlace().getName() + "'");
             setPlace(toPlace.getPlace());
         }

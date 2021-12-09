@@ -15,7 +15,7 @@ public enum Places {
         this.possibleToGetInside = possibileToGetInside;
     }
 
-    public boolean isPossibilityToGetInside() {
+    public boolean isPossibileToGetInside() {
         return this.possibleToGetInside;
     }
 
