@@ -27,6 +27,7 @@ public class Story {
         pig.setHasAnAimToDoSmthg(false);
         pig.thinkAbout(donkey);
         pig.thinkMore(donkey);
+        pig.decideToDoSmthg("нарвать букет цветов для Иа");
         pig.moveTo(field);
         pig.repeat(PhraseOfHero.First);
         pig.repeat(PhraseOfHero.Second);

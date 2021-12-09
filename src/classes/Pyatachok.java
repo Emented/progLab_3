@@ -48,10 +48,11 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         }
     }
 
+    @Override
     public void thinkAbout(AbstractAnimalHero crewmember) {
         if (!isSleeping) {
             int amountOfFlowers = crewmember.getAmountOfFlowers();
-            System.out.println("'" + getName() + "' подумал об '" + crewmember.getName() + "' и понял, что у него " + amountOfFlowers + " цветов");
+            System.out.println("'" + getName() + "' подумал об '" + crewmember.getName() + "' и понял, что у него " + ((amountOfFlowers == 0) ? "не было" : amountOfFlowers) + " цветов");
             setFeeling(Feelings.COMPASSION);
             System.out.println("'" + getName() + "' испытывал '" + getFeeling().getNameOfFeeling() + "'");
         }
@@ -60,11 +61,11 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         }
     }
 
+    @Override
     public void thinkMore(AbstractAnimalHero crewmember) {
         if (!isSleeping) {
-            int amountOfFlowers = crewmember.getAmountOfFlowers();
             setFeeling(Feelings.BIGGERCOMPASSION);
-            System.out.println("И чем больше '" + getName() + "' думал о '" + crewmember.getName() + "', тем '" + getFeeling().getNameOfFeeling() + "' он испытывал");
+            System.out.println("И чем больше '" + getName() + "' думал об '" + crewmember.getName() + "', тем '" + getFeeling().getNameOfFeeling() + "' он испытывал");
         }
         else {
             System.out.println("'" + getName() + "' спит");
@@ -72,10 +73,18 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
     }
 
     public void repeat(PhraseOfHero phrase) {
-        String currentPhrase = phrase.getPhrase();
-        degreeOfMem++;
-        System.out.println("'" + getName() + "' повторял '" + currentPhrase + "'");
-        System.out.println("Уровень его запоминания увеличился на 1, теперь он составляет " + degreeOfMem);
+        if (!isSleeping && hasAnAimToDoSmthg) {
+            String currentPhrase = phrase.getPhrase();
+            degreeOfMem++;
+            System.out.println("'" + getName() + "' повторял '" + currentPhrase + "'");
+            System.out.println("Уровень его запоминания увеличился на 1, теперь он составляет " + degreeOfMem);
+        }
+        else if (isSleeping) {
+            System.out.println("'" + getName() + "' спит");
+        }
+        else {
+            System.out.println("у '" + getName() + "' нет цели, ему нечего запоминать");
+        }
     }
 
 }
