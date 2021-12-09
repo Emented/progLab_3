@@ -13,7 +13,7 @@ public class Rabbit extends AbstractAnimalHero{
 
     public void goOut(Place toPlace) {
         if (toPlace.getPlace().isPossibilityToGetInside()) {
-            System.out.println("'" + getName() + "' ушел из места '" + getPlace().getName() + "' в место: '" + getPlace().getName() + "'");
+            System.out.println("'" + getName() + "' ушел из места '" + getPlace().getName() + "' в место: '" + toPlace.getPlace().getName() + "'");
             setPlace(toPlace.getPlace());
         }
         else {

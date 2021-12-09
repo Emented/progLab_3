@@ -1,7 +1,5 @@
 package utility;
 
-import java.util.Objects;
-
 public enum Places {
     HomeOfPyatachek ("дом пяточка", true),
     HomeOfDonkey ("дом осла Иа", true),
@@ -9,16 +7,16 @@ public enum Places {
     Yard ("двор", true),
     Field ("лужайка", true);
 
-    private final boolean possibileToGetInside;
+    private final boolean possibleToGetInside;
     private final String name;
 
     Places(String name, boolean possibileToGetInside) {
         this.name = name;
-        this.possibileToGetInside = possibileToGetInside;
+        this.possibleToGetInside = possibileToGetInside;
     }
 
     public boolean isPossibilityToGetInside() {
-        return this.possibileToGetInside;
+        return this.possibleToGetInside;
     }
 
     public String getName() {
