@@ -71,7 +71,7 @@ public abstract class AbstractAnimalHero extends AbstractFlowersKeeper {
     public void checkFlowers() {
         if (getAmountOfFlowers() == 0) {
             setFeeling(Feelings.SADNESS);
-            System.out.println("У '" + getName() + "' не было цветов, он чувствовал '" + getFeeling() + "'");
+            System.out.println("У '" + getName() + "' не было цветов, он чувствовал '" + getFeeling().getNameOfFeeling() + "'");
         }
         else {
             setFeeling(Feelings.HAPPYNESS);

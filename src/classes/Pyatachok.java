@@ -53,6 +53,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         if (!isSleeping) {
             int amountOfFlowers = crewmember.getAmountOfFlowers();
             System.out.println("'" + getName() + "' подумал об '" + crewmember.getName() + "' и понял, что у него " + ((amountOfFlowers == 0) ? "не было" : amountOfFlowers) + " цветов");
+            crewmember.checkFlowers();
             setFeeling(Feelings.COMPASSION);
             System.out.println("'" + getName() + "' испытывал '" + getFeeling().getNameOfFeeling() + "'");
         }
