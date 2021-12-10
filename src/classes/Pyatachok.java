@@ -21,12 +21,34 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         this.hasAnAimToDoSmthg = hasAnAimToDoSmthg;
     }
 
-    public void decideToDoSmthg(String action) {
+    public void decideToDoSmthg(ActionsOfMainHero action) {
         if (!isSleeping) {
             hasAnAimToDoSmthg = true;
-            System.out.println("'" + getName() + "' решил " + action);
+            System.out.println("'" + getName() + "' решил " + action.getAction());
         } else {
             System.out.println("'" + getName() + "' спит");
+        }
+    }
+
+    public void decideToDoSmthg(ActionsOfMainHero action, AbstractAnimalHero hero) {
+        if (!isSleeping && action.isRefToHero()) {
+            hasAnAimToDoSmthg = true;
+            System.out.println("'" + getName() + "' решил " + action.getAction() + " герою '" + hero.getName() + "'");
+        } else if (isSleeping) {
+            System.out.println("'" + getName() + "' спит");
+        } else {
+            System.out.println("'" + getName() + "' не может выполнить это действие по отношению к другому герою");
+        }
+    }
+
+    public void decideToDoSmthg(ActionsOfMainHero action, Place place) {
+        if (!isSleeping && action.isRefToPlace()) {
+            hasAnAimToDoSmthg = true;
+            System.out.println("'" + getName() + "' решил " + action.getAction() + " в место '" + place.getPlace().getName() + "'");
+        } else if (isSleeping) {
+            System.out.println("'" + getName() + "' спит");
+        } else {
+            System.out.println("'" + getName() + "' не может выполнить это действие по отношению к месту");
         }
     }
 

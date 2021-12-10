@@ -1,8 +1,5 @@
 import classes.*;
-import utility.Feelings;
-import utility.InterfaceOfTime;
-import utility.PhraseOfHero;
-import utility.Places;
+import utility.*;
 
 
 public class Story {
@@ -19,18 +16,18 @@ public class Story {
 
         rabbit.goOut(yard);
         pig.getUp(earlyTime);
-        pig.decideToDoSmthg("нарвать букет цветов");
+        pig.decideToDoSmthg(ActionsOfMainHero.CollectFlowers);
         pig.moveTo(field);
         rabbit.meetAnotherHero(pig);
         pig.takeFlowersFrom(field, 5);
         pig.setHasAnAimToDoSmthg(false);
-        pig.decideToDoSmthg("поставить цветы в вазу");
+        pig.decideToDoSmthg(ActionsOfMainHero.PutFlowersSomewhere, vase);
         pig.moveTo(homeOfP);
         pig.moveFlowersTo(vase, 5);
         pig.setHasAnAimToDoSmthg(false);
         pig.thinkAbout(donkey);
         pig.thinkMore(donkey);
-        pig.decideToDoSmthg("нарвать букет цветов для Иа");
+        pig.decideToDoSmthg(ActionsOfMainHero.CollectFlowers, donkey);
         pig.moveTo(field);
         pig.repeat(PhraseOfHero.First);
         pig.repeat(PhraseOfHero.Second);
