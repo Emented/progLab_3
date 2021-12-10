@@ -79,16 +79,15 @@ public abstract class AbstractAnimalHero extends AbstractFlowersKeeper {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name);
+    public boolean equals(Object anotherObject) {
+        if (this == anotherObject) return true;
+        if (!(anotherObject instanceof AbstractAnimalHero)) return false;
+        AbstractAnimalHero anotherHero = (AbstractAnimalHero) anotherObject;
+        return name.equals(anotherHero.name) && place == anotherHero.place && feeling == anotherHero.feeling && getAmountOfFlowers() == anotherHero.getAmountOfFlowers();
     }
 
     @Override
-    public boolean equals(Object anotherObj) {
-        if (this == anotherObj) return true;
-        if (anotherObj == null) return false;
-        if (getClass() != anotherObj.getClass()) return false;
-        AbstractAnimalHero anotherAbstractHero = (AbstractAnimalHero) anotherObj;
-        return name.equals(anotherAbstractHero.name);
+    public int hashCode() {
+        return Objects.hash(name, place, feeling, getAmountOfFlowers());
     }
 }

@@ -23,16 +23,15 @@ public class Place extends AbstractFlowersKeeper {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(place.getName());
+    public boolean equals(Object anotherObject) {
+        if (this == anotherObject) return true;
+        if (!(anotherObject instanceof Place)) return false;
+        Place anotherPlace = (Place) anotherObject;
+        return place == anotherPlace.place && getAmountOfFlowers() == anotherPlace.getAmountOfFlowers();
     }
 
     @Override
-    public boolean equals(Object anotherObj) {
-        if (this == anotherObj) return true;
-        if (anotherObj == null) return false;
-        if (getClass() != anotherObj.getClass()) return false;
-        Place anotherAbstactPlace = (Place) anotherObj;
-        return place.getName().equals(anotherAbstactPlace.place.getName());
+    public int hashCode() {
+        return Objects.hash(place, getAmountOfFlowers());
     }
 }

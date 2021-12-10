@@ -2,6 +2,8 @@ package classes;
 
 import utility.*;
 
+import java.util.Objects;
+
 public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking {
     private boolean isSleeping = true;
     private boolean hasAnAimToDoSmthg = false;
@@ -101,4 +103,17 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         }
     }
 
+    @Override
+    public boolean equals(Object anotherObject) {
+        if (this == anotherObject) return true;
+        if (!(anotherObject instanceof Pyatachok)) return false;
+        if (!super.equals(anotherObject)) return false;
+        Pyatachok anotherPyatachok = (Pyatachok) anotherObject;
+        return isSleeping == anotherPyatachok.isSleeping && hasAnAimToDoSmthg == anotherPyatachok.hasAnAimToDoSmthg && degreeOfMem == anotherPyatachok.degreeOfMem;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), isSleeping, hasAnAimToDoSmthg, degreeOfMem);
+    }
 }
