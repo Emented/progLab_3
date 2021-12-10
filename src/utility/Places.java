@@ -1,11 +1,11 @@
 package utility;
 
 public enum Places {
-    HomeOfPyatachek ("дом пяточка", true),
-    HomeOfDonkey ("дом осла Иа", true),
-    Vase ("ваза", false),
-    Yard ("двор", true),
-    Field ("лужайка", true);
+    HomeOfPyatachek("дом пяточка", true),
+    HomeOfDonkey("дом осла Иа", true),
+    Vase("ваза", false),
+    Yard("двор", true),
+    Field("лужайка", true);
 
     private final boolean possibleToGetInside;
     private final String name;

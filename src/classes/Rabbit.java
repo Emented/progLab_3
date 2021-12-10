@@ -4,7 +4,7 @@ import utility.AbstractAnimalHero;
 import utility.Feelings;
 import utility.Places;
 
-public class Rabbit extends AbstractAnimalHero{
+public class Rabbit extends AbstractAnimalHero {
 
     public Rabbit(String name, Places place, Feelings feeling) {
         super(name, 0, place, feeling);
@@ -14,8 +14,7 @@ public class Rabbit extends AbstractAnimalHero{
         if (toPlace.getPlace().isPossibileToGetInside()) {
             System.out.println("'" + getName() + "' ушел из места '" + getPlace().getName() + "' в место: '" + toPlace.getPlace().getName() + "'");
             setPlace(toPlace.getPlace());
-        }
-        else {
+        } else {
             System.out.println("сюда нельзя войти");
         }
     }
@@ -23,9 +22,8 @@ public class Rabbit extends AbstractAnimalHero{
     public void meetAnotherHero(AbstractAnimalHero anotherHero) {
         if (getPlace().equals(anotherHero.getPlace())) {
             System.out.println("'" + getName() + "' втретил '" + anotherHero.getName() + "' в месте '" + getPlace().getName() + "'");
-        }
-        else {
-            setPlace (anotherHero.getPlace());
+        } else {
+            setPlace(anotherHero.getPlace());
             System.out.println("'" + getName() + "' втретил '" + anotherHero.getName() + "' в месте '" + getPlace().getName() + "'");
         }
     }

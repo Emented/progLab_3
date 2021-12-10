@@ -1,9 +1,8 @@
 package classes;
 
-import java.util.Objects;
-
-import utility.AbstractAnimalHero;
 import utility.InterfaceOfTime;
+
+import java.util.Objects;
 
 public class EarlyTime implements InterfaceOfTime {
     private final String name;

@@ -1,7 +1,5 @@
 package utility;
 
-import java.util.Objects;
-
 public enum PhraseOfHero {
     First("Иа, фиалки"), Second("Фиалки, Иа-Иа");
 

@@ -1,12 +1,10 @@
 package utility;
 
-import java.util.Objects;
-
 public enum Feelings {
-    HAPPYNESS ("радость"),
-    SADNESS ("грусть"),
-    COMPASSION ("сострадание"),
-    BIGGERCOMPASSION ("большее сострадание");
+    HAPPYNESS("радость"),
+    SADNESS("грусть"),
+    COMPASSION("сострадание"),
+    BIGGERCOMPASSION("большее сострадание");
 
     private final String feeling;
 

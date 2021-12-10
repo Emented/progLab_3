@@ -2,10 +2,11 @@ package classes;
 
 import utility.*;
 
-public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking{
+public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking {
     private boolean isSleeping = true;
     private boolean hasAnAimToDoSmthg = false;
     private int degreeOfMem = 0;
+
     public Pyatachok(String name, Places place, Feelings feeling) {
         super(name, 0, place, feeling);
     }
@@ -16,10 +17,6 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         System.out.println("'" + getName() + "' встал '" + time.getTime() + "'");
     }
 
-    public boolean isHasAnAimToDoSmthg() {
-        return hasAnAimToDoSmthg;
-    }
-
     public void setHasAnAimToDoSmthg(boolean hasAnAimToDoSmthg) {
         this.hasAnAimToDoSmthg = hasAnAimToDoSmthg;
     }
@@ -28,8 +25,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         if (!isSleeping) {
             hasAnAimToDoSmthg = true;
             System.out.println("'" + getName() + "' решил " + action);
-        }
-        else {
+        } else {
             System.out.println("'" + getName() + "' спит");
         }
     }
@@ -42,8 +38,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
             } else {
                 System.out.println("сюда нельзя войти");
             }
-        }
-        else {
+        } else {
             System.out.println("'" + getName() + "' спит");
         }
     }
@@ -56,8 +51,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
             crewmember.checkFlowers();
             setFeeling(Feelings.COMPASSION);
             System.out.println("'" + getName() + "' испытывал '" + getFeeling().getNameOfFeeling() + "'");
-        }
-        else {
+        } else {
             System.out.println("'" + getName() + "' спит");
         }
     }
@@ -67,8 +61,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         if (!isSleeping) {
             setFeeling(Feelings.BIGGERCOMPASSION);
             System.out.println("И чем больше '" + getName() + "' думал об '" + crewmember.getName() + "', тем '" + getFeeling().getNameOfFeeling() + "' он испытывал");
-        }
-        else {
+        } else {
             System.out.println("'" + getName() + "' спит");
         }
     }
@@ -79,11 +72,9 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
             degreeOfMem++;
             System.out.println("'" + getName() + "' повторял '" + currentPhrase + "'");
             System.out.println("Уровень его запоминания увеличился на 1, теперь он составляет " + degreeOfMem);
-        }
-        else if (isSleeping) {
+        } else if (isSleeping) {
             System.out.println("'" + getName() + "' спит");
-        }
-        else {
+        } else {
             System.out.println("у '" + getName() + "' нет цели, ему нечего запоминать");
         }
     }

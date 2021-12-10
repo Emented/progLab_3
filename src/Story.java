@@ -1,5 +1,8 @@
-import utility.*;
 import classes.*;
+import utility.Feelings;
+import utility.InterfaceOfTime;
+import utility.PhraseOfHero;
+import utility.Places;
 
 
 public class Story {
@@ -8,10 +11,10 @@ public class Story {
         Rabbit rabbit = new Rabbit("Кролик", Places.HomeOfPyatachek, Feelings.HAPPYNESS);
         Pyatachok pig = new Pyatachok("Пятачёк", Places.HomeOfPyatachek, Feelings.HAPPYNESS);
         Donkey donkey = new Donkey("Осел Иа", Places.HomeOfDonkey, Feelings.HAPPYNESS);
-        Place homeOfP = new Place (0, Places.HomeOfPyatachek);
-        Place vase = new Place (0, Places.Vase);
-        Place yard = new Place (0, Places.Yard);
-        Place field = new Place (100, Places.Field);
+        Place homeOfP = new Place(0, Places.HomeOfPyatachek);
+        Place vase = new Place(0, Places.Vase);
+        Place yard = new Place(0, Places.Yard);
+        Place field = new Place(100, Places.Field);
         InterfaceOfTime earlyTime = new EarlyTime();
 
         rabbit.goOut(yard);
