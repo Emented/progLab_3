@@ -5,6 +5,8 @@ import utility.AbstractFlowersKeeper;
 import utility.InterfaceOfAction;
 import utility.Places;
 
+import java.util.Objects;
+
 public class PutFlowersAction implements InterfaceOfAction {
     private final AbstractFlowersKeeper accepter;
     private final int amount;
@@ -49,5 +51,23 @@ public class PutFlowersAction implements InterfaceOfAction {
                 }
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getName() + "[name: передача цветов]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PutFlowersAction)) return false;
+        PutFlowersAction anotherAction = (PutFlowersAction) o;
+        return amount == anotherAction.amount && accepter.equals(anotherAction.accepter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accepter, amount);
     }
 }

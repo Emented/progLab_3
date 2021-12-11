@@ -2,6 +2,8 @@ package classes;
 
 import utility.*;
 
+import java.util.Objects;
+
 public class CollectFlowersAction implements InterfaceOfAction {
     private final AbstractFlowersKeeper flowersKeeper;
     private final int amount;
@@ -36,5 +38,23 @@ public class CollectFlowersAction implements InterfaceOfAction {
                 performer.takeFlowersFrom(flowersKeeper, amount);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getName() + "[name: сбор цветов]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CollectFlowersAction)) return false;
+        CollectFlowersAction anotherAction = (CollectFlowersAction) o;
+        return amount == anotherAction.amount && flowersKeeper.equals(anotherAction.flowersKeeper);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(flowersKeeper, amount);
     }
 }
