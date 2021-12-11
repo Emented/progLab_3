@@ -1,7 +1,6 @@
-package classes;
+package places;
 
-import utility.AbstractFlowersKeeper;
-import utility.Places;
+import heroes.AbstractFlowersKeeper;
 
 import java.util.Objects;
 

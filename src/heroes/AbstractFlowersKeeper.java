@@ -1,4 +1,4 @@
-package utility;
+package heroes;
 
 public abstract class AbstractFlowersKeeper {
     private int amountOfFlowers;

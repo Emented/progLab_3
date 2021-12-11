@@ -1,9 +1,10 @@
-package classes;
+package actions;
 
-import utility.AbstractAnimalHero;
-import utility.AbstractFlowersKeeper;
-import utility.InterfaceOfAction;
-import utility.Places;
+import heroes.AbstractAnimalHero;
+import heroes.AbstractFlowersKeeper;
+import heroes.Pyatachok;
+import places.Place;
+import places.Places;
 
 import java.util.Objects;
 

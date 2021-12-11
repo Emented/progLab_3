@@ -1,6 +1,7 @@
-package utility;
+package heroes;
 
-import classes.Place;
+import places.Place;
+import places.Places;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package utility;
+package heroes;
 
 public interface InterfaceOfThinking {
     void thinkAbout(AbstractAnimalHero crewmember);

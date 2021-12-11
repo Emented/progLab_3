@@ -1,6 +1,9 @@
-package classes;
+package heroes;
 
-import utility.*;
+import actions.InterfaceOfAction;
+import places.Place;
+import places.Places;
+import times.InterfaceOfTime;
 
 import java.util.Objects;
 

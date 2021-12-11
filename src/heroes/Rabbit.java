@@ -1,8 +1,7 @@
-package classes;
+package heroes;
 
-import utility.AbstractAnimalHero;
-import utility.Feelings;
-import utility.Places;
+import places.Place;
+import places.Places;
 
 public class Rabbit extends AbstractAnimalHero {
 

@@ -1,8 +1,6 @@
-package classes;
+package heroes;
 
-import utility.AbstractAnimalHero;
-import utility.Feelings;
-import utility.Places;
+import places.Places;
 
 public class Donkey extends AbstractAnimalHero {
 

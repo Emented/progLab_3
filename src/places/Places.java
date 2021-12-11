@@ -1,4 +1,4 @@
-package utility;
+package places;
 
 public enum Places {
     HomeOfPyatachek("дом пяточка", true),

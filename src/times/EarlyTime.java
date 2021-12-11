@@ -1,6 +1,4 @@
-package classes;
-
-import utility.InterfaceOfTime;
+package times;
 
 import java.util.Objects;
 

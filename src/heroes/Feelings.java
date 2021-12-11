@@ -1,4 +1,4 @@
-package utility;
+package heroes;
 
 public enum Feelings {
     HAPPYNESS("радость"),

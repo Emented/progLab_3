@@ -1,5 +1,13 @@
-import classes.*;
-import utility.*;
+import actions.CollectFlowersAction;
+import actions.PutFlowersAction;
+import heroes.Donkey;
+import heroes.Feelings;
+import heroes.Pyatachok;
+import heroes.Rabbit;
+import places.Place;
+import places.Places;
+import times.EarlyTime;
+import times.InterfaceOfTime;
 
 
 public class Story {

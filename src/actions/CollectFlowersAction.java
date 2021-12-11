@@ -1,6 +1,11 @@
-package classes;
+package actions;
 
-import utility.*;
+import heroes.AbstractAnimalHero;
+import heroes.AbstractFlowersKeeper;
+import heroes.PhraseOfHero;
+import heroes.Pyatachok;
+import places.Place;
+import places.Places;
 
 import java.util.Objects;
 

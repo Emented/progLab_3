@@ -1,6 +1,6 @@
-package utility;
+package actions;
 
-import classes.Pyatachok;
+import heroes.Pyatachok;
 
 public interface InterfaceOfAction {
     void tellAboutDecision(Pyatachok teller);
