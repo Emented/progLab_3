@@ -16,20 +16,14 @@ public class Story {
 
         rabbit.goOut(yard);
         pig.getUp(earlyTime);
-        pig.decideToDoSmthg(ActionsOfMainHero.CollectFlowers);
-        pig.moveTo(field);
+        pig.decideToDoSmthg(new CollectFlowersAction(field, 5));
+        pig.performDecidedAction();
         rabbit.meetAnotherHero(pig);
-        pig.takeFlowersFrom(field, 5);
-        pig.setHasAnAimToDoSmthg(false);
-        pig.decideToDoSmthg(ActionsOfMainHero.PutFlowersSomewhere, vase);
-        pig.moveTo(homeOfP);
-        pig.moveFlowersTo(vase, 5);
-        pig.setHasAnAimToDoSmthg(false);
+        pig.decideToDoSmthg(new PutFlowersAction(vase, 5));
+        pig.performDecidedAction();
         pig.thinkAbout(donkey);
         pig.thinkMore(donkey);
-        pig.decideToDoSmthg(ActionsOfMainHero.CollectFlowers, donkey);
-        pig.moveTo(field);
-        pig.repeat(PhraseOfHero.First);
-        pig.repeat(PhraseOfHero.Second);
+        pig.decideToDoSmthg(new CollectFlowersAction(donkey, 5));
+        pig.performDecidedAction();
     }
 }

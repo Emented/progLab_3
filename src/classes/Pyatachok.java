@@ -8,6 +8,7 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
     private boolean isSleeping = true;
     private boolean hasAnAimToDoSmthg = false;
     private int degreeOfMem = 0;
+    private InterfaceOfAction link;
 
     public Pyatachok(String name, Places place, Feelings feeling) {
         super(name, 0, place, feeling);
@@ -23,34 +24,24 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
         this.hasAnAimToDoSmthg = hasAnAimToDoSmthg;
     }
 
-    public void decideToDoSmthg(ActionsOfMainHero action) {
+    public void decideToDoSmthg(InterfaceOfAction action) {
         if (!isSleeping) {
             hasAnAimToDoSmthg = true;
-            System.out.println("'" + getName() + "' решил " + action.getAction());
+            action.tellAboutDecision(Pyatachok.this);
+            link = action;
         } else {
             System.out.println("'" + getName() + "' спит");
         }
     }
 
-    public void decideToDoSmthg(ActionsOfMainHero action, AbstractAnimalHero hero) {
-        if (!isSleeping && action.isRefToHero()) {
-            hasAnAimToDoSmthg = true;
-            System.out.println("'" + getName() + "' решил " + action.getAction() + " герою '" + hero.getName() + "'");
+    public void performDecidedAction() {
+        if (hasAnAimToDoSmthg && !isSleeping) {
+            link.performAction(Pyatachok.this);
+            hasAnAimToDoSmthg = false;
         } else if (isSleeping) {
             System.out.println("'" + getName() + "' спит");
         } else {
-            System.out.println("'" + getName() + "' не может выполнить это действие по отношению к другому герою");
-        }
-    }
-
-    public void decideToDoSmthg(ActionsOfMainHero action, Place place) {
-        if (!isSleeping && action.isRefToPlace()) {
-            hasAnAimToDoSmthg = true;
-            System.out.println("'" + getName() + "' решил " + action.getAction() + " в место '" + place.getPlace().getName() + "'");
-        } else if (isSleeping) {
-            System.out.println("'" + getName() + "' спит");
-        } else {
-            System.out.println("'" + getName() + "' не может выполнить это действие по отношению к месту");
+            System.out.println("У '" + getName() + "' нет цели");
         }
     }
 
@@ -59,6 +50,19 @@ public class Pyatachok extends AbstractAnimalHero implements InterfaceOfThinking
             if (fPoint.getPlace().isPossibileToGetInside()) {
                 System.out.println("'" + getName() + "' побежал в место '" + fPoint.getPlace().getName() + "'");
                 setPlace(fPoint.getPlace());
+            } else {
+                System.out.println("сюда нельзя войти");
+            }
+        } else {
+            System.out.println("'" + getName() + "' спит");
+        }
+    }
+
+    public void moveTo(Places fPoint) {
+        if (!isSleeping) {
+            if (fPoint.isPossibileToGetInside()) {
+                System.out.println("'" + getName() + "' побежал в место '" + fPoint.getName() + "'");
+                setPlace(fPoint);
             } else {
                 System.out.println("сюда нельзя войти");
             }
